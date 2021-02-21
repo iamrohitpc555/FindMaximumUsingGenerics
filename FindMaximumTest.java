@@ -4,14 +4,17 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 
 public class FindMaximumTest {
+    private TestMaximum testMaximum;
+    int maximumNumber;
+
     /**
      * Function to test if first integer position is maximum
      */
     @Test
     public void firstPosition_ifMaximum_returnsFirstPosition() {
-        TestMaximum maximum = new TestMaximum(2, 3, 1);
-        int max = (int) maximum.testMaximum();
-        Assert.assertEquals(3, max);
+        testMaximum = new TestMaximum();
+        maximumNumber = testMaximum.findMaximumInteger(2, 3, 1);
+        Assert.assertEquals(3, maximumNumber);
     }
 
     /**
@@ -19,9 +22,9 @@ public class FindMaximumTest {
      */
     @Test
     public void secondPosition_ifMaximum_returnsSecondPosition() {
-        TestMaximum maximum = new TestMaximum(2, 3, 1);
-        int max = (int) maximum.testMaximum();
-        Assert.assertEquals(3, max);
+        testMaximum = new TestMaximum();
+        maximumNumber = testMaximum.findMaximumInteger(2, 3, 1);
+        Assert.assertEquals(3, maximumNumber);
     }
 
     /**
@@ -29,9 +32,9 @@ public class FindMaximumTest {
      */
     @Test
     public void thirdPosition_ifMaximum_returnsThirdPosition() {
-        TestMaximum maximum = new TestMaximum(2, 3, 1);
-        int max = (int) maximum.testMaximum();
-        Assert.assertEquals(3, max);
+        testMaximum = new TestMaximum();
+        maximumNumber = testMaximum.findMaximumInteger(2, 3, 1);
+        Assert.assertEquals(3, maximumNumber);
     }
 
     /**
@@ -39,9 +42,9 @@ public class FindMaximumTest {
      */
     @Test
     public void firstFloatPosition_ifMaximum_returnsFirstPosition() {
-        TestMaximum maximum = new TestMaximum(2, 3, 1);
-        int max = (int) maximum.testMaximum();
-        Assert.assertEquals(3, max, 0.01);
+        TestMaximum maximum = new TestMaximum();
+        float max = maximum.findMaximumFloat((float)8.7, (float)8.8, (float)8.9);
+        Assert.assertEquals(8.9, max,0.01);
     }
 
     /**
@@ -49,9 +52,9 @@ public class FindMaximumTest {
      */
     @Test
     public void secondFloatPosition_ifMaximum_returnsSecondPosition() {
-        TestMaximum maximum = new TestMaximum(2, 3, 1);
-        int max = (int) maximum.testMaximum();
-        Assert.assertEquals(3, max, 0.01);
+        TestMaximum maximum = new TestMaximum();
+        double max = maximum.findMaximumFloat((float)8.7, (float)8.8, (float)8.9);
+        Assert.assertEquals(8.9, max, 0.01);
     }
 
     /**
@@ -59,36 +62,8 @@ public class FindMaximumTest {
      */
     @Test
     public void thirdFloatPosition_ifMaximum_returnsThirdPosition() {
-        TestMaximum maximum = new TestMaximum(2, 3, 1);
-        int max = (int) maximum.testMaximum();
-        Assert.assertEquals(3, max, 0.01);
-    }
-
-    /**
-     * Function to test if first string position is maximum
-     */
-    @Test
-    public void firstStringPosition_ifMaximum_returnsFirstPosition() {
-        TestMaximum maximum = new TestMaximum("Apple", "Peach", "Banana");
-        String max = (String) maximum.testMaximum();
-        Assert.assertEquals("Peach", max);
-    }
-    /**
-     * Function to test if second string position is maximum
-     */
-    @Test
-    public void secondStringPosition_ifMaximum_returnsSecondPosition() {
-        TestMaximum maximum = new TestMaximum("Apple", "Peach", "Banana");
-        String max = (String) maximum.testMaximum();
-        Assert.assertEquals("Peach", max);
-    }
-    /**
-     * Function to test if third string position is maximum
-     */
-    @Test
-    public void thirdStringPosition_ifMaximum_returnsThirdPosition() {
-        TestMaximum maximum = new TestMaximum("Apple", "Peach", "Banana");
-        String max = (String) maximum.testMaximum();
-        Assert.assertEquals("Peach", max);
+        TestMaximum maximum = new TestMaximum();
+        double max = maximum.findMaximumFloat((float)8.7, (float)8.8, (float)8.9);
+        Assert.assertEquals(8.9, max, 0.01);
     }
 }
