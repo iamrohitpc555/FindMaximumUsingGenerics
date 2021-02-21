@@ -26,7 +26,6 @@ public class TestMaximum {
     public static void sortArrays(List<? extends Comparable>... arr) {
         for (List<? extends Comparable> list : arr) {
             Collections.sort(list);
-            //Std out method to print max using Generic method
             System.out.println(Collections.max(list));
         }
     }
