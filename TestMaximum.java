@@ -1,33 +1,26 @@
 package com.testmaximum;
 
-import java.util.*;
-import java.lang.Comparable;
-import java.util.*;
-
 public class TestMaximum {
+    Integer num1;
+    Integer num2;
+    Integer num3;
 
-    public static void main(String[] args) {
-        @SuppressWarnings("unchecked")
-        List<Integer> integerList = new ArrayList<>(List.of(3, 2, 1, 4, 5));
-        List<String> stringList = new ArrayList<>(List.of("H", "A", "R", "S", "I"));
-        List<String> floatList = new ArrayList<>(List.of("5.1", "4.1", "3.1", "2.1", "1.1"));
-
-        sortArrays(integerList, stringList, floatList);
-
-        System.out.println(integerList);
-        System.out.println(stringList);
-        System.out.println(floatList);
+    TestMaximum(Integer num1, Integer num2, Integer num3) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.num3 = num3;
     }
-
-    /**
-     * This function is used to sort the arraylist using wildcard objects
-     * @param arr
-     */
-    public static void sortArrays(List<? extends Comparable>... arr) {
-        for (List<? extends Comparable> list : arr) {
-            Collections.sort(list);
-            //Std out method to print max using Generic method
-            System.out.println(Collections.max(list));
+    public Integer findMaximumInteger() {
+        //num1 is largest so far
+        Integer max = num1;
+        if (num2.compareTo(max) > 0) {
+            //num2 is largest so far
+            max = num2;
         }
+        if (num3.compareTo(max) > 0) {
+            //num3 is largest so far
+            max = num3;
+        }
+        return max;
     }
 }
